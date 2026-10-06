@@ -1,12 +1,13 @@
 {
-  "name": "cls1",
-  "version": "1.0.0",
-  "description": "Docker Practical",
+  "name": "cloudpulse",
+  "version": "2.0.0",
+  "description": "A polished Docker and cloud deployment observability dashboard",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "node --watch app.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^5.2.1"
   }
 }
