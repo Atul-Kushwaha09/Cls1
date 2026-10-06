@@ -1,5 +1,7 @@
 # CloudPulse
 
+![CloudPulse Dashboard](./assets/dashboard.png)
+
 CloudPulse is a polished, container-ready deployment dashboard for the cloud computing batch. It turns a basic Express “hello world” into a small but realistic cloud-native service: the browser dashboard reads live runtime data from an API, while Docker provides an isolated, health-checked production runtime.
 
 ## What this demonstrates
