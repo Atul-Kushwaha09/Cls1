@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CloudPulse container observability dashboard">
+    <title>CloudPulse | Container Control Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="CloudPulse home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>Cloud<span>Pulse</span></span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a class="nav-item active" href="#overview"><span>◈</span> Overview</a>
+          <a class="nav-item" href="#services"><span>◫</span> Services</a>
+          <a class="nav-item" href="#activity"><span>↗</span> Activity</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="cloud-card">
+            <div class="cloud-icon">☁</div>
+            <strong>Docker ready</strong>
+            <p>Ship this dashboard anywhere containers run.</p>
+          </div>
+          <div class="user"><div class="avatar">AK</div><div><strong>Atul Kushwaha</strong><small>Cloud learner</small></div><span>•••</span></div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark"><span></span><span></span><span></span></span> CloudPulse</div>
+          <div class="top-actions"><span class="live-dot"></span><span>Live environment</span><button class="icon-button" title="Refresh data" id="refresh">↻</button><button class="avatar small">AK</button></div>
+        </header>
+
+        <section class="content" id="overview">
+          <div class="intro">
+            <div><p class="eyebrow">CONTAINER CONTROL CENTER</p><h1>Good evening, Atul <span>✦</span></h1><p class="subheading">Your deployment is healthy and ready for traffic.</p></div>
+            <div class="status-pill"><span class="live-dot"></span>All systems operational</div>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric-card primary"><div class="metric-label">SERVICE HEALTH <span class="info">i</span></div><div class="metric-value"><span class="healthy-dot"></span> 100%</div><div class="metric-foot"><span class="trend">↗ 0.04%</span> from last check</div><div class="sparkline health-line"></div></article>
+            <article class="metric-card"><div class="metric-label">UPTIME <span class="info">i</span></div><div class="metric-value" id="uptime">0h 0m 0s</div><div class="metric-foot"><span class="trend">↗ 99.98%</span> availability</div><div class="sparkline uptime-line"></div></article>
+            <article class="metric-card"><div class="metric-label">MEMORY USAGE <span class="info">i</span></div><div class="metric-value" id="memory">-- MB</div><div class="meter"><span id="memory-bar"></span></div><div class="metric-foot" id="memory-detail">Loading runtime metrics...</div></article>
+          </div>
+
+          <div class="section-heading" id="services"><div><p class="eyebrow">SERVICE MAP</p><h2>Running services</h2></div><button class="outline-button" id="details">View details <span>→</span></button></div>
+          <div class="service-table"><div class="table-head"><span>SERVICE</span><span>STATUS</span><span>RESPONSE</span><span>REGION</span></div><div class="service-row"><div class="service-name"><span class="service-icon">⌘</span><div><strong>cloudpulse-web</strong><small>Node.js application</small></div></div><span class="status-text"><i></i> Healthy</span><span class="response">24 ms</span><span class="region">◉ <span id="region">local-docker</span></span></div><div class="service-row"><div class="service-name"><span class="service-icon purple">◇</span><div><strong>container-runtime</strong><small>Docker Engine</small></div></div><span class="status-text"><i></i> Healthy</span><span class="response">12 ms</span><span class="region">◉ Host node</span></div></div>
+
+          <div class="bottom-grid" id="activity"><article class="panel"><div class="panel-heading"><div><p class="eyebrow">DEPLOYMENT</p><h2>Latest release</h2></div><span class="release-tag">Production</span></div><div class="release"><div class="release-icon">✓</div><div><strong>Release <span id="release">2026.10</span> deployed successfully</strong><p>Container image built and health checks passed.</p></div><span class="release-time">Just now</span></div><div class="pipeline"><span class="done">Build</span><b></b><span class="done">Test</span><b></b><span class="done">Deploy</span><b></b><span class="done">Live</span></div></article><article class="panel"><div class="panel-heading"><div><p class="eyebrow">RUNTIME</p><h2>Environment details</h2></div><span class="dots">•••</span></div><dl class="details"><div><dt>Node version</dt><dd id="node-version">--</dd></div><div><dt>CPU cores</dt><dd id="cpu-cores">--</dd></div><div><dt>Container host</dt><dd id="hostname">--</dd></div></dl></article></div>
+          <footer>CloudPulse <span>•</span> Built for the cloud computing batch <span>•</span> <a href="/api/health">API health endpoint</a></footer>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
